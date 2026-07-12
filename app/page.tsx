@@ -20,8 +20,7 @@ export default function Home() {
           <Features />
           <Level />
           <Dashboard />
-          <Feedback />
-          
+          <Feedback />   
         </div>
       </main>
       <Footer />
