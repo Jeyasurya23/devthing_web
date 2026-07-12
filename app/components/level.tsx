@@ -66,7 +66,10 @@ const badges = [
 
 export default function Level() {
   return (
-    <section id="level" className="relative z-10 border-t border-line py-12 md:py-20 lg:py-24 overflow-x-hidden">
+    <section
+      id="level"
+      className="relative z-10 border-t border-line py-12 md:py-20 lg:py-24 overflow-x-hidden"
+    >
       <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 min-w-0">
         <h1 className="font-mono text-paper text-3xl sm:text-4xl lg:text-5xl font-bold tracking-wide">
           Level up with every contribution
@@ -77,8 +80,7 @@ export default function Level() {
           levels, achievements, & badges that showcase your expertise.
         </p>
 
-        <div className="w-full min-w-0 border border-line bg-surface rounded-2xl px-4 py-5 grid gap-6 lg:grid-cols-[1.2fr_1fr]">
-          {/* Left Column - Profile & Levels */}
+        <div className="w-full min-w-0 border border-line bg-surface rounded-2xl px-4 sm:px-5 py-5 grid gap-6 lg:grid-cols-[1.2fr_1fr]">
           <div className="min-w-0 border border-line bg-bg2 rounded-2xl px-4 sm:px-6 py-6 md:py-8 gap-4">
             <div className="flex flex-col sm:flex-row sm:items-center gap-4 font-mono text-sm text-paper-dim mb-2">
               <div className="w-20 h-20 sm:w-24 sm:h-24 flex-shrink-0 flex items-center justify-center font-mono text-mint text-3xl rounded-full bg-surface2 border border-mint mx-auto sm:mx-0">
@@ -109,44 +111,46 @@ export default function Level() {
               Levels
             </h2>
 
-            {/* Current Level */}
-            <div className="mx-1 mt-3 border border-mint px-5 py-5 rounded-2xl bg-surface flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-              <div className="inline-flex justify-center sm:justify-start items-center gap-4">
-                <span className="w-9 h-9 sm:w-10 sm:h-10 flex items-center justify-center font-mono text-mint text-2xl rounded-full bg-surface2 border border-mint flex-shrink-0">
-                  <Leaf size={12} />
+            <div className="mx-1 mt-3 border border-mint px-5 py-6 sm:py-5 rounded-2xl bg-surface flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+              <div className="flex items-center justify-center sm:justify-start gap-4 w-full sm:w-auto">
+                <span className="w-11 h-11 sm:w-10 sm:h-10 flex items-center justify-center font-mono text-mint text-3xl sm:text-2xl rounded-full bg-surface2 border border-mint flex-shrink-0 shadow-sm">
+                  <Leaf size={16} />
                 </span>
-                <h1 className="font-mono font-bold text-mint text-base sm:text-lg">Beginner</h1>
+                <div>
+                  <h1 className="font-mono font-bold text-mint text-lg">Beginner</h1>
+                  <p className="text-xs text-mint/70 font-mono -mt-0.5">Current Level</p>
+                </div>
               </div>
-              <div className="font-mono text-mint inline-flex items-center gap-1.5 text-sm">
-                <Target size={14} />
-                <span>You</span>
+              <div className="flex items-center justify-center sm:justify-end gap-2 font-mono text-mint text-sm bg-mint/10 px-4 py-2 rounded-xl w-full sm:w-auto">
+                <Target size={15} />
+                <span className="font-medium">You are here</span>
               </div>
             </div>
 
-            {/* Locked Levels */}
             {levels.map((l, i) => (
               <div
                 key={i}
-                className="mx-1 mt-3 border border-line px-5 py-5 rounded-2xl bg-surface flex flex-col sm:flex-row sm:items-center justify-between gap-4"
+                className="mx-1 mt-3 border border-line px-5 py-6 sm:py-5 rounded-2xl bg-surface flex flex-col sm:flex-row sm:items-center justify-between gap-4"
               >
-                <div className="inline-flex justify-center sm:justify-start items-center gap-4">
-                  <span className="w-9 h-9 sm:w-10 sm:h-10 flex items-center justify-center font-mono text-paper-dim text-2xl rounded-full bg-surface2 border border-line flex-shrink-0">
+                <div className="flex items-center justify-center sm:justify-start gap-4 w-full sm:w-auto">
+                  <span className="w-11 h-11 sm:w-10 sm:h-10 flex items-center justify-center font-mono text-paper-dim text-3xl sm:text-2xl rounded-full bg-surface2 border border-line flex-shrink-0">
                     {l.icon}
                   </span>
-                  <h1 className="font-mono font-bold text-paper-dim text-base sm:text-lg">
-                    {l.level}
-                  </h1>
+                  <div>
+                    <h1 className="font-mono font-bold text-paper-dim text-lg">{l.level}</h1>
+                    <p className="text-xs text-paper-dim/60 font-mono -mt-0.5">Locked</p>
+                  </div>
                 </div>
-                <div className="font-mono text-paper-dim inline-flex items-center gap-1.5 text-sm">
-                  <Lock size={14} />
+
+                <div className="flex items-center justify-center sm:justify-end gap-2 font-mono text-paper-dim text-sm bg-line/70 px-4 py-2 rounded-xl w-full sm:w-auto">
+                  <Lock size={15} />
+                  <span className="font-medium">Locked</span>
                 </div>
               </div>
             ))}
           </div>
 
-          {/* Right Column - Milestones & XP Info */}
           <div className="min-w-0 grid gap-6 lg:grid-rows-2">
-            {/* Milestones */}
             <div className="min-w-0 border border-line bg-bg2 rounded-2xl px-4 sm:px-6 py-6 md:py-8">
               <h1 className="font-mono text-paper text-2xl sm:text-3xl font-bold tracking-wide">
                 Milestones
@@ -156,7 +160,6 @@ export default function Level() {
                 Unlock badges as you contribute.
               </p>
 
-              {/* Honeycomb badges - horizontal scroll */}
               <div className="flex flex-nowrap gap-6 overflow-x-auto pb-4 -mx-1 px-1 snap-x snap-mandatory scroll-smooth [scrollbar-width:thin] [scrollbar-color:var(--color-line)_transparent]">
                 {badges.map((badge, index) => (
                   <div
@@ -179,9 +182,7 @@ export default function Level() {
                 ))}
               </div>
 
-              {/* Milestone detail cards */}
               <div className="mt-8 flex flex-col gap-4">
-                {/* Unlocked */}
                 <div className="flex items-start gap-4 rounded-2xl border border-line bg-surface px-4 sm:px-6 py-5">
                   <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full border border-line bg-surface2 text-mint">
                     <MessageSquarePlus size={18} />
@@ -207,7 +208,6 @@ export default function Level() {
                   </div>
                 </div>
 
-                {/* Locked */}
                 <div className="flex items-start gap-4 rounded-2xl border border-line bg-surface px-4 sm:px-6 py-5">
                   <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full border border-line bg-surface2 text-paper-dim">
                     <Lock size={18} />
@@ -234,27 +234,22 @@ export default function Level() {
               </div>
             </div>
 
-            {/* XP Sources */}
-            <div className="min-w-0 border border-line bg-bg2 rounded-2xl px-5 sm:px-10 py-8">
+            <div className="min-w-0 border border-line bg-bg2 rounded-2xl px-5 sm:px-6 lg:px-10 py-8">
               <h1 className="font-bold font-mono text-3xl sm:text-4xl tracking-wide text-paper mb-6">
                 XP comes from real contribution
               </h1>
               <ul className="space-y-5 sm:space-y-6 text-paper-dim text-base sm:text-lg">
                 <li className="relative pl-6 before:absolute before:left-0 before:top-2.5 before:h-2 before:w-2 before:rounded-full before:bg-mint">
-                  Earn <span className="font-semibold text-mint">3 XP</span> for
-                  every question you ask.
+                  Earn <span className="font-semibold text-mint">3 XP</span> for every question you ask.
                 </li>
                 <li className="relative pl-6 before:absolute before:left-0 before:top-2.5 before:h-2 before:w-2 before:rounded-full before:bg-mint">
-                  Earn <span className="font-semibold text-mint">5 XP</span> for
-                  every answer you post.
+                  Earn <span className="font-semibold text-mint">5 XP</span> for every answer you post.
                 </li>
                 <li className="relative pl-6 before:absolute before:left-0 before:top-2.5 before:h-2 before:w-2 before:rounded-full before:bg-mint">
-                  Receive <span className="font-semibold text-mint">2 XP</span>{" "}
-                  for every upvote on your answers.
+                  Receive <span className="font-semibold text-mint">2 XP</span> for every upvote on your answers.
                 </li>
                 <li className="relative pl-6 before:absolute before:left-0 before:top-2.5 before:h-2 before:w-2 before:rounded-full before:bg-mint">
-                  Gain <span className="font-semibold text-mint">1 XP</span> for
-                  each DevAI usage.
+                  Gain <span className="font-semibold text-mint">1 XP</span> for each DevAI usage.
                 </li>
                 <li className="relative pl-6 before:absolute before:left-0 before:top-2.5 before:h-2 before:w-2 before:rounded-full before:bg-mint">
                   Build XP combos through consistent daily contributions.
