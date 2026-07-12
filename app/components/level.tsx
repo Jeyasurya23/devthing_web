@@ -112,7 +112,7 @@ export default function Level() {
             </h2>
 
             <div className="mx-1 mt-3 border border-mint px-5 py-6 sm:py-5 rounded-2xl bg-surface flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-              <div className="flex items-center justify-center sm:justify-start gap-4 w-full sm:w-auto">
+              <div className="flex items-center justify-start gap-4 w-full sm:w-auto">
                 <span className="w-11 h-11 sm:w-10 sm:h-10 flex items-center justify-center font-mono text-mint text-3xl sm:text-2xl rounded-full bg-surface2 border border-mint flex-shrink-0 shadow-sm">
                   <Leaf size={16} />
                 </span>
@@ -125,6 +125,7 @@ export default function Level() {
                   </p>
                 </div>
               </div>
+
               <div className="flex items-center justify-center sm:justify-end gap-2 font-mono text-mint text-sm bg-mint/10 px-4 py-2 rounded-xl w-full sm:w-auto">
                 <Target size={15} />
                 <span className="font-medium">You are here</span>
@@ -136,7 +137,7 @@ export default function Level() {
                 key={i}
                 className="mx-1 mt-3 border border-line px-5 py-6 sm:py-5 rounded-2xl bg-surface flex flex-col sm:flex-row sm:items-center justify-between gap-4"
               >
-                <div className="flex items-center justify-center sm:justify-start gap-4 w-full sm:w-auto">
+                <div className="flex items-center justify-start gap-4 w-full sm:w-auto">
                   <span className="w-11 h-11 sm:w-10 sm:h-10 flex items-center justify-center font-mono text-paper-dim text-3xl sm:text-2xl rounded-full bg-surface2 border border-line flex-shrink-0">
                     {l.icon}
                   </span>
