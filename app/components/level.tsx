@@ -117,8 +117,12 @@ export default function Level() {
                   <Leaf size={16} />
                 </span>
                 <div>
-                  <h1 className="font-mono font-bold text-mint text-lg">Beginner</h1>
-                  <p className="text-xs text-mint/70 font-mono -mt-0.5">Current Level</p>
+                  <h1 className="font-mono font-bold text-mint text-lg">
+                    Beginner
+                  </h1>
+                  <p className="text-xs text-mint/70 font-mono -mt-0.5">
+                    Current Level
+                  </p>
                 </div>
               </div>
               <div className="flex items-center justify-center sm:justify-end gap-2 font-mono text-mint text-sm bg-mint/10 px-4 py-2 rounded-xl w-full sm:w-auto">
@@ -137,8 +141,12 @@ export default function Level() {
                     {l.icon}
                   </span>
                   <div>
-                    <h1 className="font-mono font-bold text-paper-dim text-lg">{l.level}</h1>
-                    <p className="text-xs text-paper-dim/60 font-mono -mt-0.5">Locked</p>
+                    <h1 className="font-mono font-bold text-paper-dim text-lg">
+                      {l.level}
+                    </h1>
+                    <p className="text-xs text-paper-dim/60 font-mono -mt-0.5">
+                      Locked
+                    </p>
                   </div>
                 </div>
 
@@ -183,51 +191,62 @@ export default function Level() {
               </div>
 
               <div className="mt-8 flex flex-col gap-4">
-                <div className="flex items-start gap-4 rounded-2xl border border-line bg-surface px-4 sm:px-6 py-5">
-                  <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full border border-line bg-surface2 text-mint">
-                    <MessageSquarePlus size={18} />
-                  </div>
-                  <div className="flex-1 min-w-0">
-                    <div className="flex items-center justify-between">
-                      <h3 className="font-mono font-semibold text-paper text-base sm:text-lg pr-2">
-                        First Question
-                      </h3>
-                      <div className="flex items-center gap-1.5 text-sm text-mint whitespace-nowrap">
-                        <Check size={16} />
-                        <span>Unlocked</span>
+                <div className="rounded-2xl border border-line bg-surface p-5 sm:p-6">
+                  <div className="flex flex-col sm:flex-row sm:items-start gap-5">
+                    <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-emerald-500/10 border border-emerald-500/30 text-mint">
+                      <MessageSquarePlus size={22} />
+                    </div>
+                    <div className="flex-1 min-w-0 pt-1">
+                      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 sm:gap-4">
+                        <h3 className="font-mono font-semibold text-paper text-lg">
+                          First Question
+                        </h3>
+                        <div className="flex items-center gap-1.5 text-emerald-400 text-sm font-medium bg-emerald-500/10 px-3 py-1 rounded-lg w-fit">
+                          <Check size={16} />
+                          <span>Unlocked</span>
+                        </div>
                       </div>
-                    </div>
-                    <p className="mt-1 text-sm text-paper-dim">Ask your first question</p>
-                    <div className="h-2 rounded-full bg-line my-3 overflow-hidden">
-                      <div className="h-full w-[100%] rounded-full bg-gradient-to-r from-mint-dim to-mint"></div>
-                    </div>
-                    <div className="flex justify-between text-xs sm:text-sm">
-                      <span className="text-paper-dim">Completed</span>
-                      <span className="text-mint">+5 XP</span>
+                      <p className="mt-2 text-sm text-paper-dim">
+                        Ask your first question
+                      </p>
+                      <div className="h-2.5 rounded-full bg-line my-4 overflow-hidden">
+                        <div className="h-full w-[100%] rounded-full bg-gradient-to-r from-emerald-400 to-mint"></div>
+                      </div>
+                      <div className="flex justify-between items-center text-xs sm:text-sm">
+                        <span className="text-emerald-400 font-medium">
+                          Completed ✓
+                        </span>
+                        <span className="text-mint font-medium">+5 XP</span>
+                      </div>
                     </div>
                   </div>
                 </div>
 
-                <div className="flex items-start gap-4 rounded-2xl border border-line bg-surface px-4 sm:px-6 py-5">
-                  <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full border border-line bg-surface2 text-paper-dim">
-                    <Lock size={18} />
-                  </div>
-                  <div className="flex-1 min-w-0">
-                    <div className="flex items-center justify-between">
-                      <h3 className="font-mono font-semibold text-paper-dim text-base sm:text-lg pr-2">
-                        Helper
-                      </h3>
-                      <div className="flex items-center gap-1 text-sm text-paper-dim whitespace-nowrap">
-                        <Lock size={14} />
+                <div className="rounded-2xl border border-line bg-surface p-5 sm:p-6">
+                  <div className="flex flex-col sm:flex-row sm:items-start gap-5">
+                    <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-gray-500/10 border border-gray-500/30 text-paper-dim">
+                      <Lock size={22} />
+                    </div>
+                    <div className="flex-1 min-w-0 pt-1">
+                      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 sm:gap-4">
+                        <h3 className="font-mono font-semibold text-paper-dim text-lg">
+                          Helper
+                        </h3>
+                        <div className="flex items-center gap-1.5 text-paper-dim text-sm font-medium bg-line px-3 py-1 rounded-lg w-fit">
+                          <Lock size={16} />
+                          <span>Locked</span>
+                        </div>
                       </div>
-                    </div>
-                    <p className="mt-1 text-sm text-paper-dim">Help 5 users</p>
-                    <div className="h-2 rounded-full bg-line my-3 overflow-hidden">
-                      <div className="h-full w-[10%] rounded-full bg-gray-600"></div>
-                    </div>
-                    <div className="flex justify-between text-xs sm:text-sm">
-                      <span className="text-paper-dim">1/5</span>
-                      <span className="text-paper-dim">+5 XP</span>
+                      <p className="mt-2 text-sm text-paper-dim">
+                        Help 5 users
+                      </p>
+                      <div className="h-2.5 rounded-full bg-line my-4 overflow-hidden">
+                        <div className="h-full w-[10%] rounded-full bg-gray-600"></div>
+                      </div>
+                      <div className="flex justify-between items-center text-xs sm:text-sm">
+                        <span className="text-paper-dim">1/5</span>
+                        <span className="text-paper-dim">+5 XP</span>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -240,16 +259,20 @@ export default function Level() {
               </h1>
               <ul className="space-y-5 sm:space-y-6 text-paper-dim text-base sm:text-lg">
                 <li className="relative pl-6 before:absolute before:left-0 before:top-2.5 before:h-2 before:w-2 before:rounded-full before:bg-mint">
-                  Earn <span className="font-semibold text-mint">3 XP</span> for every question you ask.
+                  Earn <span className="font-semibold text-mint">3 XP</span> for
+                  every question you ask.
                 </li>
                 <li className="relative pl-6 before:absolute before:left-0 before:top-2.5 before:h-2 before:w-2 before:rounded-full before:bg-mint">
-                  Earn <span className="font-semibold text-mint">5 XP</span> for every answer you post.
+                  Earn <span className="font-semibold text-mint">5 XP</span> for
+                  every answer you post.
                 </li>
                 <li className="relative pl-6 before:absolute before:left-0 before:top-2.5 before:h-2 before:w-2 before:rounded-full before:bg-mint">
-                  Receive <span className="font-semibold text-mint">2 XP</span> for every upvote on your answers.
+                  Receive <span className="font-semibold text-mint">2 XP</span>{" "}
+                  for every upvote on your answers.
                 </li>
                 <li className="relative pl-6 before:absolute before:left-0 before:top-2.5 before:h-2 before:w-2 before:rounded-full before:bg-mint">
-                  Gain <span className="font-semibold text-mint">1 XP</span> for each DevAI usage.
+                  Gain <span className="font-semibold text-mint">1 XP</span> for
+                  each DevAI usage.
                 </li>
                 <li className="relative pl-6 before:absolute before:left-0 before:top-2.5 before:h-2 before:w-2 before:rounded-full before:bg-mint">
                   Build XP combos through consistent daily contributions.
